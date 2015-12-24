@@ -71,6 +71,8 @@ import sk.tomsik68.mclauncher.impl.versions.mcdownload.MCDownloadVersionList;
 
 import sk.tomsik68.mclauncher.api.common.IObservable;
 import sk.tomsik68.mclauncher.api.common.IObserver;
+import sk.tomsik68.mclauncher.api.common.IOperatingSystem;
+import sk.tomsik68.mclauncher.api.common.MCLauncherAPI;
 import sk.tomsik68.mclauncher.api.common.mc.MinecraftInstance;
 import sk.tomsik68.mclauncher.api.versions.IVersion;
 import sk.tomsik68.mclauncher.impl.versions.mcassets.MCAssetsVersionList;
@@ -168,6 +170,8 @@ public class Main extends javax.swing.JFrame {
             profileIO.write(profiles);
             
 	    System.out.println("Success! Launching...");
+           
+            
 	    final MinecraftInstance mc = new MinecraftInstance(new File("testmc"));
 	    final MCDownloadVersionList versionList = new MCDownloadVersionList();
 	    versionList.addObserver(new IObserver<String>() {
@@ -513,6 +517,11 @@ public class Main extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        jSeparator1 = new javax.swing.JPopupMenu.Separator();
+        jMenuItem3 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jTextField1 = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
@@ -523,6 +532,17 @@ public class Main extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
 
+        jMenuItem1.setText("Cut");
+        jPopupMenu1.add(jMenuItem1);
+
+        jMenuItem2.setText("Copy");
+        jPopupMenu1.add(jMenuItem2);
+        jPopupMenu1.add(jSeparator1);
+
+        jMenuItem3.setText("Paste");
+        jMenuItem3.setToolTipText("");
+        jPopupMenu1.add(jMenuItem3);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Launcher - 1.0");
 
@@ -532,6 +552,11 @@ public class Main extends javax.swing.JFrame {
         jTextField1.addFocusListener(new java.awt.event.FocusAdapter() {
             public void focusLost(java.awt.event.FocusEvent evt) {
                 jTextField1FocusLost(evt);
+            }
+        });
+        jTextField1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseReleased(java.awt.event.MouseEvent evt) {
+                jTextField1MouseReleased(evt);
             }
         });
         jTextField1.addActionListener(new java.awt.event.ActionListener() {
@@ -783,6 +808,14 @@ public class Main extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_jTextField1KeyPressed
 
+    private void jTextField1MouseReleased(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTextField1MouseReleased
+        // TODO add your handling code here:
+        /*if(evt.isPopupTrigger()){
+            jPopupMenu1.show(this,evt.getX(),evt.getY());
+        }*/
+        
+    }//GEN-LAST:event_jTextField1MouseReleased
+
     /**
      * @param args the command line arguments
      */
@@ -813,6 +846,7 @@ public class Main extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
+        
         java.awt.EventQueue.invokeLater(new Runnable() {
             @Override
             public void run() {
@@ -830,7 +864,12 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
+    private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JTextField jTextField1;
     // End of variables declaration//GEN-END:variables
 }
